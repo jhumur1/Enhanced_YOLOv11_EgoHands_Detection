@@ -20,11 +20,41 @@ The system detects and classifies four hand categories:
 ## 📊 Dataset
 
 The model was trained and evaluated on the EgoHands dataset, which contains complex hand-object interactions under varied environmental conditions.
+Training set: 3840 images
+
+Validation set: 480 images
 The dataset is available on Roboflow:
 
 [Hands-LR34x Dataset (Roboflow)](https://app.roboflow.com/american-international-university-bangladesh-iyfmc/hands-lr34x/models)
 
+📝 Data Preprocessing & Annotation
+Annotation Tool: Roboflow
 
+Steps performed:
+
+Uploaded raw EgoHands dataset to Roboflow workspace.
+
+Annotated bounding boxes for hands (4 classes).
+
+Applied preprocessing: resizing to 640×640, Auto-Orient and Resize.
+
+Exported dataset in YOLOv11 format.
+
+Advantages: Roboflow ensured clean labels, consistent formatting, and easy integration with Ultralytics YOLO.
+
+Methodology:
+
+The experiments were conducted using Google Colab, which provided 12.7 GB of RAM, a Tesla T4 GPU with 15 GB of memory, and approximately 70 GB of free storage. The runtime environment was Python 3.11.13. The software stack included Keras/TensorFlow, Ultralytics YOLO v8.3.155, and PyTorch 2.6.0.
+
+Each model was trained for 70 epochs to ensure sufficient learning of the dataset’s complexity. A batch size of 12 was selected due to GPU memory constraints, while depth and width scaling factors were set to 0.5 to reduce model size and memory usage without sacrificing accuracy. The confidence threshold was fixed at 0.5 to balance precision and recall, and the IoU threshold was set at 0.7 to enforce stricter localization. Training employed the AdamW optimizer with a learning rate of 0.00125. All input images were resized to 640×640 pixels to maintain consistency across models.
+
+The proposed YOLOv11n model consists of 185 layers, 5.63 million parameters, and requires 17.5 GFLOPs per forward pass.
+
+
+## 🧠 Model Architecture
+![Model Architecture](Yolov11n.png)
+
+Ghost Convolution (GhostConv) layers were integrated into YOLOv11 to reduce feature redundancy and improve computational efficiency.
 
 ## 📈 Performance Results
 
@@ -43,11 +73,6 @@ The dataset is available on Roboflow:
 - −10.91% reduction in latency  
 
 The proposed model establishes a new benchmark in efficiency and effectiveness for egocentric hand detection.
-
-## 🧠 Model Architecture
-![Model Architecture](Yolov11n.png)
-
-Ghost Convolution (GhostConv) layers were integrated into YOLOv11 to reduce feature redundancy and improve computational efficiency.
 
 
 
