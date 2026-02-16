@@ -1,0 +1,13 @@
+train: /content/EgoHands-Public-1/train/images
+val: /content/EgoHands-Public-1/valid/images
+test: /content/EgoHands-Public-1/test/images
+
+nc: 4
+names: ['myleft', 'myright', 'yourleft', 'yourright']
+
+roboflow:
+  workspace: american-international-university-bangladesh-iyfmc
+  project: hands-lr34x
+  version: 1
+  license: Public Domain
+  url: https://universe.roboflow.com/american-international-university-bangladesh-iyfmc/hands-lr34x/dataset/1
