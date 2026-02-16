@@ -20,6 +20,11 @@ The system detects and classifies four hand categories:
 ## 📊 Dataset
 
 The model was trained and evaluated on the EgoHands dataset, which contains complex hand-object interactions under varied environmental conditions.
+The dataset is available on Roboflow:
+
+[Hands-LR34x Dataset (Roboflow)](https://app.roboflow.com/american-international-university-bangladesh-iyfmc/hands-lr34x/models)
+
+
 
 ## 📈 Performance Results
 
