@@ -40,7 +40,7 @@ The model was trained and evaluated on the EgoHands dataset, which contains comp
 The proposed model establishes a new benchmark in efficiency and effectiveness for egocentric hand detection.
 
 ## 🧠 Model Architecture
-![Model Architecture](Yolov11.png)
+![Model Architecture](Yolov11n.png)
 
 Ghost Convolution (GhostConv) layers were integrated into YOLOv11 to reduce feature redundancy and improve computational efficiency.
 
